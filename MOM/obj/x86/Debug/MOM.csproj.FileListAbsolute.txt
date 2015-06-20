@@ -1,0 +1,61 @@
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\MOM.Form1.resources
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\MOM.Properties.Resources.resources
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\ResGen.read.1.tlog
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\ResGen.write.1.tlog
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\bin\Debug\MOM.exe
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\bin\Debug\MOM.pdb
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\MOM.exe
+c:\users\leon\documents\visual studio 2010\Projects\MOM\MOM\obj\x86\Debug\MOM.pdb
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.exe
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.pdb
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.exe
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.pdb
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.BusinessLogic.dll
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.DataAccess.dll
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.BusinessLogic.pdb
+D:\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.DataAccess.pdb
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Properties.Resources.resources
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\ResGen.read.1.tlog
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\ResGen.write.1.tlog
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Main.resources
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.NewCustomer.resources
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.EditCustomer.resources
+D:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.AddLoan.resources
+X:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.exe
+X:\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.pdb
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.exe.config
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.exe.manifest
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.application
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.exe
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\MOM.pdb
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.AddLoan.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Collection.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.EditCustomer.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Reports.GeneralReport.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Main.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Reports.MonthlyReport.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.NewCustomer.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.NewRate.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.PendingCollectionReport.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Properties.Resources.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Report.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.SearchLoan.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.PendingCollection.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.UnpaidReport.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.Reports.YearlyReport.resources
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.csproj.GenerateResource.Cache
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\RdlCompile.cache
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\RdlCompile.compiled
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.exe.manifest
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.application
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.exe
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.pdb
+C:\Users\Leon\Dropbox\Window Apps\MOM\MOM\obj\x86\Debug\MOM.csprojResolveAssemblyReference.cache

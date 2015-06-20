@@ -1,0 +1,333 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Text;
+//using System.Data.OleDb;
+using System.Data.SqlServerCe;
+
+namespace MOM
+{
+    public sealed class SQLHelper
+    {
+        #region ConnectionString
+        public static string GetConnectionString()
+        {
+            //Data Source=D:\ConsoleApplication1\ConsoleApplication1\MOM.sdf
+            //return @"Provider=Microsoft.Jet.OLEDB.4.0 ;Data Source=D:\\MOM.mdb";            
+            return @"Persist Security Info = False; Data Source = 'C:\\Users\\Leon\\Dropbox\\Window Apps\\MOM\\MOM.DataAccess\\MOM.sdf';";
+            //return @"Persist Security Info = False; Data Source = 'E:\\MOM\\DB\\MOM.sdf';";
+        }
+        #endregion
+
+        #region SqlParameter
+
+        /*public static SqlCeParameter GetSqlParameter(string prmParameterName, SqlCeType prmSqlDbType, ParameterDirection prmParameterDirection, object prmValue)
+        {
+            SqlCeParameter objSqlParameter = new SqlCeParameter();            
+            objSqlParameter.ParameterName = prmParameterName;
+            objSqlParameter.DbType = prmSqlDbType;
+            objSqlParameter.Direction = prmParameterDirection;
+
+            if (prmValue != null)
+            {
+                objSqlParameter.Value = prmValue;
+            }
+
+            return objSqlParameter;
+        }*/
+
+        /*public static void SqlCommandAddSqlParameter(SqlCommand prmSqlCommand, SqlCeParameter[] prmSqlParameters)
+        {
+            if (prmSqlParameters != null && prmSqlParameters.Length > 0)
+            {
+                foreach (SqlParameter varSqlParameter in prmSqlParameters)
+                {
+                    prmSqlCommand.Parameters.Add(varSqlParameter);
+                }
+            }
+        }*/
+        #endregion
+
+        #region FillDataSet
+
+        /// <summary>
+        ///     Fill DataSet from Database
+        /// </summary>
+        /// <param name="prmConnectionString">Database connection string</param>
+        /// <param name="prmDataSet">DataSet to be populated</param>
+        /// <param name="prmTableName">Database table name</param>
+        /// <param name="prmCommandText">Command text</param>
+        /// <param name="prmCommandType">Command type</param>
+        /// <param name="prmSqlParameters">Query Parameter</param>
+        /// <example>SQLHelper.FillDataSet(this.ConnectionString, cStaff, cStaff.COM_STAFF.TableName, "select * from COM_Staff", CommandType.Text, null);</example>
+        /// <returns></returns>
+        public static int FillDataSet(DataSet prmDataSet, string prmTableName, string prmCommandText, CommandType prmCommandType, params SqlCeParameter[] prmSqlParameters)
+        {
+            string prmConnectionString = null;
+            try
+            {                
+                prmConnectionString = GetConnectionString();
+                using (SqlCeConnection objConn = new SqlCeConnection(prmConnectionString))
+                {
+                    SqlCeCommand objSqlCommand = new SqlCeCommand(prmCommandText, objConn);
+                    objSqlCommand.CommandType = prmCommandType;
+                    //SqlCommandAddSqlParameter(objSqlCommand, prmSqlParameters);
+                    if (prmSqlParameters != null && prmSqlParameters.Length > 0) 
+                        objSqlCommand.Parameters.AddRange(prmSqlParameters);
+                    SqlCeDataAdapter objSqlDataAdapter = new SqlCeDataAdapter(objSqlCommand);
+                    return objSqlDataAdapter.Fill(prmDataSet, prmTableName);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return -1;
+        }
+
+        public static int FillDataSet(DataSet prmDataSet, string prmTableName, string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return FillDataSet(prmDataSet, prmTableName, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return -1;
+        }
+        #endregion
+
+        #region ExecuteDataSet
+
+        public static DataSet ExecuteDataSet(string prmTableName, string prmCommandText, CommandType prmCommandType, params SqlCeParameter[] prmSqlParameters)
+        {
+            string prmConnectionString = null;
+            try
+            {
+                prmConnectionString = GetConnectionString();                
+                using (SqlCeConnection objConn = new SqlCeConnection(prmConnectionString))
+                {
+                    DataSet objDataSet = new DataSet();
+                    objConn.Open();
+                    SqlCeCommand objSqlCommand = new SqlCeCommand(prmCommandText, objConn);
+                    objSqlCommand.CommandType = prmCommandType;
+                    //SqlCommandAddSqlParameter(objSqlCommand, prmSqlParameters);
+                    objSqlCommand.Parameters.AddRange(prmSqlParameters);
+                    SqlCeDataAdapter objSqlDataAdapter = new SqlCeDataAdapter(objSqlCommand);
+                    objSqlDataAdapter.Fill(objDataSet, prmTableName);
+                    return objDataSet;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return new DataSet();
+        }
+
+        public static DataSet ExecuteDataSet(string prmTableName, string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteDataSet(prmTableName, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+        #endregion
+
+        #region ExecuteScalar
+
+        public static object ExecuteScalar(string prmConnectionString, string prmCommandText, CommandType prmCommandType, params SqlCeParameter[] prmSqlParameters)
+        {
+            try
+            {
+                if (prmConnectionString == null || prmConnectionString == "")
+                {
+                    prmConnectionString = GetConnectionString();
+                }
+                using (SqlCeConnection objConn = new SqlCeConnection(prmConnectionString))
+                {
+                    objConn.Open();
+                    SqlCeCommand objSqlCommand = new SqlCeCommand(prmCommandText, objConn);
+                    objSqlCommand.CommandType = prmCommandType;
+                    //SqlCommandAddSqlParameter(objSqlCommand, prmSqlParameters);
+                    objSqlCommand.Parameters.AddRange(prmSqlParameters);
+                    return objSqlCommand.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static object ExecuteScalar(string prmConnectionString, string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteScalar(prmConnectionString, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static object ExecuteScalar(string prmCommandText, CommandType prmCommandType, SqlCeParameter [] prmSqlParameters)
+        {
+            try
+            {
+                return ExecuteScalar(null, prmCommandText, prmCommandType, prmSqlParameters);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static object ExecuteScalar(string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteScalar(null, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+        #endregion
+
+        #region ExecuteNonQuery
+
+        public static int ExecuteNonQuery(string prmCommandText, CommandType prmCommandType, params SqlCeParameter[] prmSqlParameters)
+        {
+            string prmConnectionString = null;
+            try
+            {
+                prmConnectionString = GetConnectionString();
+                using (SqlCeConnection objConn = new SqlCeConnection(prmConnectionString))
+                {
+                    objConn.Open();
+                    SqlCeCommand objSqlCommand = new SqlCeCommand(prmCommandText, objConn);
+                    objSqlCommand.CommandType = prmCommandType;
+                    //SqlCommandAddSqlParameter(objSqlCommand, prmSqlParameters);
+                    if(prmSqlParameters != null)
+                      objSqlCommand.Parameters.AddRange(prmSqlParameters);
+                    Console.WriteLine(objSqlCommand.CommandText);
+                    return objSqlCommand.ExecuteNonQuery();
+                    //objConn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                //Console.Read();
+                //Logger.endResponse();
+            }
+            return -1;
+        }
+
+        public static int ExecuteNonQuery(string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteNonQuery(prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.Read();
+                //Logger.endResponse();
+            }
+            return -1;
+        }
+        #endregion
+
+        #region ExecuteReader
+
+        public static ArrayList ExecuteReader(string prmConnectionString, string prmCommandText, CommandType prmCommandType, params SqlCeParameter[] prmSqlParameters)
+        {
+            try
+            {
+                ArrayList al = new ArrayList();
+                if (prmConnectionString == null || prmConnectionString == "")
+                {
+                    prmConnectionString = GetConnectionString();
+                }
+                using (SqlCeConnection objConn = new SqlCeConnection(prmConnectionString))
+                {
+                    objConn.Open();
+                    SqlCeCommand objSqlCommand = new SqlCeCommand(prmCommandText, objConn);
+                    objSqlCommand.CommandType = prmCommandType;
+                    //SqlCommandAddSqlParameter(objSqlCommand, prmSqlParameters);
+                    objSqlCommand.Parameters.AddRange(prmSqlParameters);
+                    SqlCeDataReader reader = objSqlCommand.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        al.Add(reader[0]);
+                    }
+                }
+                return al;
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static ArrayList ExecuteReader(string prmConnectionString, string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteReader(prmConnectionString, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static ArrayList ExecuteReader(string prmCommandText, CommandType prmCommandType, SqlCeParameter[] prmSqlParameters)
+        {
+            try
+            {
+                return ExecuteReader(null, prmCommandText, prmCommandType, prmSqlParameters);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+
+        public static ArrayList ExecuteReader(string prmCommandText, CommandType prmCommandType)
+        {
+            try
+            {
+                return ExecuteReader(null, prmCommandText, prmCommandType, null);
+            }
+            catch (Exception ex)
+            {
+                //Logger.endResponse();
+            }
+            return null;
+        }
+        #endregion
+    }
+}

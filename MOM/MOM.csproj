@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E15F7AE9-EC9B-400C-A8C5-8E410DD01455}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOM</RootNamespace>
+    <AssemblyName>MOM</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Leon\Desktop\MOMInstaller\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7F3FBA1D86C3692B786CFBF3511CA2B3FC183704</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MOM_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEON|x86'">
+    <OutputPath>bin\x86\LEON\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MOM.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.DataVisualization\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLoan.Designer.cs">
+      <DependentUpon>AddLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collection.Designer.cs">
+      <DependentUpon>Collection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Customer_Manager.cs" />
+    <Compile Include="CUSTOMER_provider.cs" />
+    <Compile Include="EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralReport.Designer.cs">
+      <DependentUpon>GeneralReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loan.cs" />
+    <Compile Include="Loan_Manager.cs" />
+    <Compile Include="LOAN_provider.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
+    <Compile Include="MOMDataSet.cs">
+      <DependentUpon>MOMDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MOMDataSet.Designer.cs">
+      <DependentUpon>MOMDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyReport.Designer.cs">
+      <DependentUpon>MonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewRate.Designer.cs">
+      <DependentUpon>NewRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingCollectionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingCollectionReport.Designer.cs">
+      <DependentUpon>PendingCollectionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rate.cs" />
+    <Compile Include="Rate_Manager.cs" />
+    <Compile Include="RATE_provider.cs" />
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataSet.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDataSet.Designer.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="SQLHelper.cs.bk" />
+    <Compile Include="SearchLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchLoan.Designer.cs">
+      <DependentUpon>SearchLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="PendingCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingCollection.Designer.cs">
+      <DependentUpon>PendingCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnpaidReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnpaidReport.Designer.cs">
+      <DependentUpon>UnpaidReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YearlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YearlyReport.Designer.cs">
+      <DependentUpon>YearlyReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddLoan.resx">
+      <DependentUpon>AddLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collection.resx">
+      <DependentUpon>Collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralReport.rdlc" />
+    <EmbeddedResource Include="GeneralReport.resx">
+      <DependentUpon>GeneralReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyReport.rdlc" />
+    <EmbeddedResource Include="MonthlyReport.resx">
+      <DependentUpon>MonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewRate.resx">
+      <DependentUpon>NewRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingCollectionReport.rdlc" />
+    <EmbeddedResource Include="PendingCollectionReport.resx">
+      <DependentUpon>PendingCollectionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchLoan.resx">
+      <DependentUpon>SearchLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingCollection.resx">
+      <DependentUpon>PendingCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnpaidReport.rdlc" />
+    <EmbeddedResource Include="UnpaidReport.resx">
+      <DependentUpon>UnpaidReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearlyReport.rdlc" />
+    <EmbeddedResource Include="YearlyReport.resx">
+      <DependentUpon>YearlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MOMDataSet.xsc">
+      <DependentUpon>MOMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MOMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MOMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MOMDataSet.xss">
+      <DependentUpon>MOMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\MOM.DataAccess.MOMDataSet.datasource" />
+    <None Include="Properties\DataSources\MOM.DataAccess.MOMDataSetTableAdapters.LOANTableAdapter.datasource" />
+    <None Include="Properties\DataSources\MOM.DataAccess.MOMDataSetTableAdapters.LOAN_CUSTOMERTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Data.SqlServerCe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dafdsfsdfas.ico" />
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
